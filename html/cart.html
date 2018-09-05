@@ -11,6 +11,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th><input type="checkbox" @click="handleAllCheck">全选 </th>
                         <th></th>
                         <th>商品名称</th>
                         <th>商品单价</th>
@@ -20,6 +21,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(item,index) in list">
+                        <td><input type="checkbox" @click="handleCheck(index)" :checked="item.checked"></td>
                         <td>{{ index + 1 }}</td>
                         <td>{{ item.name }}</td>
                         <td>{{ item.price }}</td>
